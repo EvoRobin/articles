@@ -44,15 +44,19 @@
 
 最后需要注意的是，selector 其实是 objc runtime 的概念，如果这个你的 selector 对应的方法只在 Swift 中可见的话 (也就是说它是一个 Swift 中的 private 方法)，在调用这个 selector 时你会遇到一个 unrecognized selector 错误：
 
-E> ## 这是错误代码
-E>
-E> ~~~~~~~~~~~~~~~ 
-E> private func callMe() {
-E>     //...
-E> }
-E>
-E> NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"callMe", userInfo: nil, repeats: true)
-E> ~~~~~~~~~~~~~~~ 
+<div class="ui error message">
+  <div class="header">
+  <i class="fa fa-bug"></i>
+    这是错误代码
+  </div>
+  <pre><code>
+private func callMe() {
+    //...
+}
+
+NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"callMe", userInfo: nil, repeats: true)
+    </code></pre>
+</div>
 
 正确的做法是在 `private` 前面加上 `@objc` 或者 `dynamic` 关键字，这样运行时就能找到对应的方法了。
 

@@ -48,7 +48,6 @@ Swift 的 `for in` 可以用在所有实现了 `SequenceType` 的类型上，而
 
 输出为
 
-{linenos=off}
     Index 4 is 4
     Index 3 is 3
     Index 2 is 2
@@ -57,9 +56,10 @@ Swift 的 `for in` 可以用在所有实现了 `SequenceType` 的类型上，而
 
 顺便你可以免费得到的收益是你可以使用像 `map` , `filter` 和 `reduce` 这些方法，因为它们都有对应 `SequenceType ` 的版本：
 
-A> func map<S : SequenceType, T>(source: S, transform: (S.Generator.Element) -> T) -> [T]
-A>
-A> func filter<S : SequenceType>(source: S, includeElement: (S.Generator.Element) -> Bool) -> [S.Generator.Element]
-A>
-A> func reduce<S : SequenceType, U>(sequence: S, initial: U, combine: (U, S.Generator.Element) -> U) -> U
-
+<div class="ui orange segment">
+<code>func map&lt;S : SequenceType, T&gt;(source: S, transform: (S.Generator.Element) -&gt; T) -&gt; [T]</code>
+<p></p>
+<code>func filter&lt;S : SequenceType&gt;(source: S, includeElement: (S.Generator.Element) -&gt; Bool) -&gt; [S.Generator.Element]</code>
+<p></p>
+<code>func reduce&lt;S : SequenceType, U&gt;(sequence: S, initial: U, combine: (U, S.Generator.Element) -&gt; U) -&gt; U</code>
+</div>
