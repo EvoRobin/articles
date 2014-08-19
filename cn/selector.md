@@ -58,9 +58,9 @@ NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"callMe", userI
     </code></pre>
 </div>
 
-正确的做法是在 `private` 前面加上 `@objc` 或者 `dynamic` 关键字，这样运行时就能找到对应的方法了。
+正确的做法是在 `private` 前面加上 `@objc` 关键字，这样运行时就能找到对应的方法了。
 
-    dynamic private func callMe() {
+    @objc private func callMe() {
         //...
     }
     
