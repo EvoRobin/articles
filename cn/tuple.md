@@ -16,7 +16,7 @@
         (a,b) = (b,a)
     }
 
-另外一个挺常用的地方是错误错误处理。objc 时代我们已经习惯了在需要错误处理的时候先做一个 `NSError` 的指针，然后将地址传到方法里等返回：
+另外一个挺常用的地方是错误处理。objc 时代我们已经习惯了在需要错误处理的时候先做一个 `NSError` 的指针，然后将地址传到方法里等返回：
 
     NSError *error = nil;
     BOOL success = [[NSFileManager defaultManager] 
