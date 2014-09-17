@@ -66,6 +66,13 @@ NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"callMe", userI
     
     NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"callMe", userInfo: nil, repeats: true)
 
+另外，如果方法的第一个参数有外部变量的话，在通过字符串生成 `Selector` 时还有一个约定，那就是在方法名和第一个外部参数之间加上 `with`：
+
+    func aMethod(external internal: String) { ... }
+
+想获取对应的获取 `Selector`，应该这么写：
+    
+    let s = Selector("aMethodWithExternal:")
 
 
 
